@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
 
+    public float jumpGlobal;
+
     private Rigidbody rb;
 
     private int count;
@@ -25,8 +27,15 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate() {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        float jump;
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            jump = jumpGlobal;
+        }
+        else{
+            jump = 0;
+        }
+        Vector3 movement = new Vector3(moveHorizontal, jump, moveVertical);
 
         rb.AddForce(movement * speed);
 

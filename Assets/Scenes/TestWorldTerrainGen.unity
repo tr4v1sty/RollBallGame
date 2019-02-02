@@ -1278,6 +1278,11 @@ PrefabInstance:
       propertyPath: winText
       value: 
       objectReference: {fileID: 232911926}
+    - target: {fileID: 4403630708808132141, guid: 6a3f2b4ef0a6ced4a8cdb1c4725591a9,
+        type: 3}
+      propertyPath: jumpGlobal
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a3f2b4ef0a6ced4a8cdb1c4725591a9, type: 3}
 --- !u!1001 &2116808297
