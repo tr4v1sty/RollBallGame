@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EndWallScript : MonoBehaviour
 {
-
+    private int count = 1;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) {
-            SceneManager.LoadScene(0);
+            count++;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

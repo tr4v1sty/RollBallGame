@@ -16,13 +16,10 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
 
     private Rigidbody rb;
-
-    private int count;
-
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        count = 0;
         SetCountText();
         winText.text = "";
     }
@@ -48,15 +45,15 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pick Up")) {
             other.gameObject.SetActive(false);
-            count += 1;
+            Score.Set(1);
             SetCountText();
         }
     }
     void SetCountText() {
 
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Count: " + Score.Get().ToString();
 
-        if (count >= 12) {
+        if (Score.Get() >= 12) {
             winText.text = "You win";
         }
 

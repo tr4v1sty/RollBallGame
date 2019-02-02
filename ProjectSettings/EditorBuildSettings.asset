@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGame.unity
     guid: c26c2b8cf5e04f04eb826564d8c4d8fb
   - enabled: 1
-    path: Assets/Scenes/TestWorldTerrainGen.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 1a6038a30cf6022469e7494ecb92eb25
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: b7c8edda617688d4bade6a611657289f
   m_configObjects: {}
