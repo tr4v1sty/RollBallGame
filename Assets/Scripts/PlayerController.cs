@@ -8,14 +8,16 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     public float jumpGlobal;
+    
+    public Text countText;
+
+    public Text winText;
+
+    private bool isGrounded = false;
 
     private Rigidbody rb;
 
     private int count;
-
-    public Text countText;
-
-    public Text winText;
 
     private void Start()
     {
@@ -37,7 +39,9 @@ public class PlayerController : MonoBehaviour
         }
         Vector3 movement = new Vector3(moveHorizontal, jump, moveVertical);
 
-        rb.AddForce(movement * speed);
+        if (isGrounded == true) {
+            rb.AddForce(movement * speed);
+        }
 
     }
     void OnTriggerEnter(Collider other)
@@ -57,4 +61,20 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    void OnCollisionEnter(Collision theCollision)
+    {
+        if (theCollision.gameObject.name == "Terrain") {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision theCollision)
+    {
+        if (theCollision.gameObject.name == "Terrain") {
+            isGrounded = false;
+        }
+    }
 }
+
+
