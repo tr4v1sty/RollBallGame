@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Score
 {
-    private static int count;
+    private static int count = 0;
     
     public static int Get () { return count; }
 
